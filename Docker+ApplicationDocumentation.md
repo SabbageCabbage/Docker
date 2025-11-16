@@ -85,4 +85,5 @@ and edit your machine settings :>
 
 ### Examples of what that should look like 
 ![alt text](<Screenshot from 2025-11-16 00-27-48.png>)
-![](<Screenshot from 2025-11-16 00-29-20.png>)
+
+![alt text](<Screenshot from 2025-11-16 00-29-20.png>)
