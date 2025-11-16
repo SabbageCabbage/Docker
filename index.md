@@ -30,7 +30,7 @@ Visit https://docs.docker.com/engine/install to find instructions for your speci
 ### Verify that Docker is running
     sudo systemctl status docker
 
-## :boom: LET'S FOLD SOME PROTEIN :boom:
+## 💥 LET'S FOLD SOME PROTEIN 💥
 
 ### Account Creation
 Create your account at https://v8-4.foldingathome.org/machines
