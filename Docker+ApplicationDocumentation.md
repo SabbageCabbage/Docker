@@ -1,4 +1,6 @@
 # Docker Installation + Folding@home Installation Guide (Debian)
+## Preface
+
 ## Docker Installation
 Visit https://docs.docker.com/engine/install to find instructions for your specific distro.
 ### Uninstall Potential Conflicting Packages 
@@ -30,3 +32,42 @@ Visit https://docs.docker.com/engine/install to find instructions for your speci
     sudo systemctl status docker
 
 ## :boom: LET'S FOLD SOME PROTEIN :boom:
+
+### Account Creation
+Create your account at https://v8-4.foldingathome.org/machines
+
+### Make Your Directory 
+    mkdir -p ~/docker-projects/folding@home
+    cd ~/docker-projects/folding@home
+
+### Create your .yml file 
+Use a text editor to create your docker-compose file and add the following:
+
+    services:
+      foldingathome:
+        image: lscr.io/linuxserver foldingathome:latest
+        container_name: foldingathome
+        environment:
+          - PUID=1000
+          - PGID=1000
+          - TZ=Etc/UTC
+          - ACCOUNT_TOKEN= #Grabbed from the account that you created by using the link above 
+          - MACHINE_NAME=
+          - CLI_ARGS= #optional
+        volumes:
+          - /path/to/foldingathome/data:/config
+        ports:
+          - 7396:7396 #optional
+        restart: unless-stopped
+
+**Side note**: If you have an NVIDIA gpu and want to utilize hardware acceleration you'll have to install the container runtime from NVIDIA here's the link to some instructions to do that:
+https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
+
+you'll also have to add:
+
+    --runtime=nvidia -e 
+    NVIDIA_VISIBLE_DEVICES=all 
+
+to your docker-compose file 
+
+### Start
