@@ -1,5 +1,4 @@
 # Docker Installation + Folding@home Installation Guide (Debian)
-## Preface
 
 ## Docker Installation
 Visit https://docs.docker.com/engine/install to find instructions for your specific distro.
@@ -70,4 +69,20 @@ you'll also have to add:
 
 to your docker-compose file 
 
-### Start
+### Starting
+   
+    sudo docker compose up -d
+
+### Make sure its running
+
+    sudo docker ps 
+
+Once it's running you can visit:
+    
+    localhost:7396
+
+and edit your machine settings :>
+
+### Examples of what that should look like 
+![alt text](<Screenshot from 2025-11-16 00-27-48.png>)
+![](<Screenshot from 2025-11-16 00-29-20.png>)
